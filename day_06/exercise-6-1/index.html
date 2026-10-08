@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Übung 6.1 - Die Rezeptliste umbauen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Rezepte</h1>
+
+  <div class="toolbar">
+    <label><input id="only-vegetarian" type="checkbox"> Nur vegetarisch</label>
+    <input id="search-input" type="search" placeholder="Suchen …">
+  </div>
+  <p id="recipe-count"></p>
+
+  <ul id="recipe-list"></ul>
+
+  <form id="recipe-form">
+    <input id="title-input" placeholder="Titel">
+    <input id="duration-input" type="number" placeholder="Dauer in Minuten">
+    <label><input id="vegetarian-input" type="checkbox"> vegetarisch</label>
+    <button>Hinzufügen</button>
+  </form>
+  <p id="error-message" class="error"></p>
+
+  <script src="app.js"></script>
+</body>
+</html>

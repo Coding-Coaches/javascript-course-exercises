@@ -1,0 +1,10 @@
+[
+  { "id": 1, "title": "Pfannkuchen", "durationMinutes": 20, "vegetarian": true },
+  { "id": 2, "title": "Lasagne", "durationMinutes": 60, "vegetarian": false },
+  { "id": 3, "title": "Chili sin Carne", "durationMinutes": 45, "vegetarian": true },
+  { "id": 4, "title": "Rührei", "durationMinutes": 10, "vegetarian": true },
+  { "id": 5, "title": "Hähnchencurry", "durationMinutes": 40, "vegetarian": false },
+  { "id": 6, "title": "Gemüsesuppe", "durationMinutes": 35, "vegetarian": true },
+  { "id": 7, "title": "Spaghetti Bolognese", "durationMinutes": 30, "vegetarian": false },
+  { "id": 8, "title": "Ofengemüse", "durationMinutes": 50, "vegetarian": true }
+]

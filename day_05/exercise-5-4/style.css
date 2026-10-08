@@ -1,0 +1,102 @@
+/* ============================================================
+   Gemeinsames Aussehen für die Browser-Übungen.
+   Hier musst du nichts ändern - JavaScript schaltet nur Klassen um.
+   ============================================================ */
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 44rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.5;
+  color: #17223b;
+}
+
+h1 {
+  color: #0f2f5c;
+  border-bottom: 3px solid #d7263d;
+  padding-bottom: .4rem;
+}
+
+ul, ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+li {
+  padding: .5rem .75rem;
+  margin-bottom: .4rem;
+  background: #f7f9fc;
+  border-left: 4px solid #0f2f5c;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+li button {
+  margin-left: .75rem;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 1.5rem 0 .5rem;
+}
+
+input, button {
+  font: inherit;
+  padding: .35rem .6rem;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card {
+  padding: .75rem 1rem;
+  margin-bottom: .75rem;
+  border: 1px solid #d4dbe8;
+  border-radius: 8px;
+}
+
+.card h2 {
+  margin: 0 0 .25rem;
+  font-size: 1.15rem;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* ---- Zustände, die JavaScript an- und ausschaltet ---- */
+
+.long {
+  border-color: #d7263d;
+  background: #fdf1f2;
+}
+
+.highlight {
+  border-color: #2f855a;
+  background: #f2f7f4;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: .55;
+}
+
+.available {
+  border-left-color: #2f855a;
+  background: #f2f7f4;
+}
+
+.error {
+  color: #8b1a26;
+  font-weight: 600;
+  min-height: 1.5em;
+}

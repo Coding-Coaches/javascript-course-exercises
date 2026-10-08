@@ -1,0 +1,6 @@
+[
+  { "id": 1, "title": "Brot backen mit Sauerteig", "date": "Sa, 7. November", "freeSeats": 4 },
+  { "id": 2, "title": "Fahrrad-Reparatur für Einsteiger", "date": "Sa, 14. November", "freeSeats": 2 },
+  { "id": 3, "title": "Erste Hilfe am Kind", "date": "So, 15. November", "freeSeats": 6 },
+  { "id": 4, "title": "Aquarell-Malerei", "date": "Sa, 21. November", "freeSeats": 1 }
+]
