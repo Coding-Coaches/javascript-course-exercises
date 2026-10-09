@@ -102,10 +102,11 @@ form.addEventListener("submit", (event) => {
 });
 
 list.addEventListener("click", (event) => {
-  if (event.target.dataset.id === undefined) {
+  const item = event.target.closest("li");
+  if (item === null) {
     return;
   }
-  const id = Number(event.target.dataset.id);
+  const id = Number(item.dataset.id);
   state.recipes = state.recipes.filter((recipe) => recipe.id !== id);
   render();
 });

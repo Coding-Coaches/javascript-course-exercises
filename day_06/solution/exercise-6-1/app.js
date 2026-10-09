@@ -116,11 +116,13 @@ form.addEventListener("submit", (event) => {
 // alle <li> weg und baut neue. Ein Listener an einem alten <li> wäre
 // danach verschwunden.
 list.addEventListener("click", (event) => {
-  // Klick zwischen zwei Einträge trifft die <ul> - die hat keine id.
-  if (event.target.dataset.id === undefined) {
+  // closest sucht vom geklickten Element aufwärts das <li>.
+  // Klick zwischen zwei Einträge trifft die <ul> - dann gibt es kein <li>.
+  const item = event.target.closest("li");
+  if (item === null) {
     return;
   }
-  const id = Number(event.target.dataset.id);   // dataset ist immer Text
+  const id = Number(item.dataset.id);   // dataset ist immer Text
   state.recipes = state.recipes.filter((recipe) => recipe.id !== id);
   render();
 });

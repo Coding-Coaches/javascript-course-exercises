@@ -58,4 +58,4 @@ vegButton.addEventListener("click", () => {
 
 // Wer ganz genau hinschaut: Ein Klick auf den Rand der Liste trifft
 // die <ul> selbst - dann bekommt die ganze Liste "done". Wie man das
-// verhindert, kommt an Tag 6.
+// verhindert (closest), kommt an Tag 6.

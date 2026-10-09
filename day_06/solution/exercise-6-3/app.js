@@ -88,15 +88,16 @@ function render() {
 // "Event Listeners": leer.
 // render() wirft bei jedem Aufruf alle Buttons weg und baut NEUE.
 // Die Listener hingen an den alten. Deshalb hängt der Listener jetzt
-// an der Liste, die bleibt - und event.target sagt, welcher Button
-// geklickt wurde (Event-Delegation).
+// an der Liste, die bleibt - und event.target.closest sagt, welcher
+// Button geklickt wurde (Event-Delegation).
 list.addEventListener("click", (event) => {
-  // Klick auf den Text oder neben den Button: kein data-id → nichts tun
-  if (event.target.dataset.id === undefined) {
+  // Klick auf den Text oder neben den Button: kein Button → nichts tun
+  const button = event.target.closest("button");
+  if (button === null) {
     return;
   }
 
-  const id = Number(event.target.dataset.id);
+  const id = Number(button.dataset.id);
   const workshop = state.workshops.find((workshop) => workshop.id === id);
   workshop.freeSeats--;
   state.signups++;

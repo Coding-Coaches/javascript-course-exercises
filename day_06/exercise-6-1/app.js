@@ -101,7 +101,7 @@ form.addEventListener("submit", (event) => {
 // Ausbau: Ein Klick auf ein Rezept löscht es.
 //
 //   - Gib jedem <li> in render() die id mit:  item.dataset.id = recipe.id
-//   - EIN Listener an der Liste liest  event.target.dataset.id
+//   - EIN Listener an der Liste sucht das <li>:  event.target.closest("li")
 //   - Achtung: dataset.id ist ein String - und ein Klick zwischen
-//     zwei Einträge trifft die Liste selbst, die keine id hat.
+//     zwei Einträge trifft die Liste selbst: closest liefert dann null.
 // ------------------------------------------------------------
