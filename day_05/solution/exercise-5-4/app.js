@@ -10,8 +10,7 @@ const recipes = [
 
 const list = document.querySelector("#recipe-list");
 const form = document.querySelector("#recipe-form");
-const titleInput = document.querySelector("#title-input");
-const durationInput = document.querySelector("#duration-input");
+const titleInput = document.querySelector("#title-input");   // nur für Ausbau B
 const errorMessage = document.querySelector("#error-message");
 
 function renderRecipes(list, recipes) {
@@ -31,11 +30,15 @@ form.addEventListener("submit", (event) => {
   // 1. Kein Neuladen der Seite
   event.preventDefault();
 
-  // 2. Normalisieren: value ist immer ein String
-  const title = titleInput.value.trim();
-  const durationMinutes = Number(durationInput.value);
+  // 2. + 3. Alle Felder mit name einsammeln, als Objekt:
+  //         { title: "Lasagne", duration: "60" }
+  const data = Object.fromEntries(new FormData(form));
 
-  // 3. Prüfen - Guard Clauses wie an Tag 2
+  // 4. Normalisieren: Werte aus dem Formular sind immer Strings
+  const title = data.title.trim();
+  const durationMinutes = Number(data.duration);
+
+  // Prüfen - Guard Clauses wie an Tag 2
   if (title === "") {
     errorMessage.textContent = "Bitte einen Titel eingeben.";
     return;
@@ -55,11 +58,11 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  // Daten ändern → neu rendern
+  // 5. Ausführen: Daten ändern → neu rendern
   recipes.push({ title, durationMinutes });
   renderRecipes(list, recipes);
 
-  // 4. Aufräumen
+  // Aufräumen
   form.reset();
   errorMessage.textContent = "";
 

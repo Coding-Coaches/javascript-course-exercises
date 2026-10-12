@@ -34,9 +34,15 @@ renderRecipes(list, recipes);
 
 // 2. Klick schaltet "done" um
 // Ein Listener an der Liste statt einer an jedem <li>.
-// event.target ist das Element, auf das wirklich geklickt wurde.
+// event.target ist das Element, auf das wirklich geklickt wurde -
+// closest sucht von dort aufwärts das <li>.
 list.addEventListener("click", (event) => {
-  event.target.classList.toggle("done");
+  const item = event.target.closest("li");
+  // Klick auf den Rand der Liste trifft die <ul> - dann gibt es kein <li>.
+  if (item === null) {
+    return;
+  }
+  item.classList.toggle("done");
 });
 
 
@@ -55,7 +61,3 @@ vegButton.addEventListener("click", () => {
     vegButton.textContent = "Nur vegetarisch";
   }
 });
-
-// Wer ganz genau hinschaut: Ein Klick auf den Rand der Liste trifft
-// die <ul> selbst - dann bekommt die ganze Liste "done". Wie man das
-// verhindert (closest), kommt an Tag 6.

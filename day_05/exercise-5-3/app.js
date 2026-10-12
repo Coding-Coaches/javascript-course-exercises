@@ -29,7 +29,8 @@ const list = document.querySelector("#recipe-list");
 // 2. Ein Klick auf ein Rezept schaltet die Klasse "done" um.
 //
 //    Tipp: EIN Listener an der Liste genügt.
-//          event.target ist das <li>, auf das geklickt wurde.
+//          event.target.closest("li") ist das <li>, auf das geklickt
+//          wurde - oder null bei einem Klick neben die Einträge.
 
 
 // 3. Der Button #only-vegetarian zeigt nur noch die vegetarischen

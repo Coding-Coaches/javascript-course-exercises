@@ -21,22 +21,21 @@ const books = [
 ];
 
 function printList(list) {
-  for (let i = 1; i < list.length; i++) {
+  for (let i = 0; i < list.length; i++) {
     const { title, year } = list[i];
-    console.log(`${i}. ${title} (${year})`);
+    console.log(`${i+1}. ${title} (${year})`);
   }
 }
 
-const countAvailable = (list) => list.filter((book) => book.availabel).length;
+const countAvailable = (list) => list.filter((book) => book.available).length;
 
 function findAuthor(list, query) {
-  const book = list.find((book) => book.title === query);
+  const book = list.find((book) => book.title.toLowerCase() === query.toLowerCase());
   return book.author;
 }
 
 function addBook(list, newBook) {
-  const updated = [...list];
-  return updated.push(newBook);
+  return [...list, newBook];
 }
 
 function lendBook(list, title) {

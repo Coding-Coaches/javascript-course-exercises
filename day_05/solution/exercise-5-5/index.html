@@ -6,13 +6,15 @@
   <title>Bücherliste</title>
   <link rel="stylesheet" href="style.css">
   <!--
-    FEHLER 1 behoben: Das <script> stand hier im <head>.
+    FEHLER 1 behoben: Beim <script> fehlte  type="module" .
     Erkennungszeichen: die einzige rote Meldung -
       Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
-    Die Meldung zeigt die FOLGE: form ist null. Die URSACHE: Beim
-    Lesen des <head> gibt es das Formular noch nicht. Deshalb gehört
-    das Skript ans Ende des <body>.
+    Die Meldung zeigt die FOLGE: form ist null. Die URSACHE: Ohne
+    type="module" läuft das Skript sofort, beim Lesen des <head> -
+    und da gibt es das Formular noch nicht. Ein Modul wartet, bis die
+    Seite fertig gelesen ist.
   -->
+  <script type="module" src="app.js"></script>
 </head>
 <body>
   <h1>Bücherliste</h1>
@@ -21,12 +23,19 @@
   <ul id="book-list"></ul>
 
   <form id="book-form">
-    <input id="title-input" placeholder="Titel">
-    <input id="author-input" placeholder="Autor oder Autorin">
+    <!--
+      FEHLER 3 behoben: Beim Titelfeld fehlte  name="title" .
+      Erkennungszeichen: Beim Absenden die Meldung
+        Cannot read properties of undefined (reading 'trim')
+      - solange Fehler 5 noch drin ist, nur mit "Preserve log" zu sehen.
+      Breakpoint auf die Zeile mit data.title: data ist
+      { author: "..." } - title fehlt ganz. FormData nimmt nur Felder
+      mit name.
+    -->
+    <input id="title-input" name="title" placeholder="Titel">
+    <input id="author-input" name="author" placeholder="Autor oder Autorin">
     <button>Hinzufügen</button>
   </form>
   <p id="error-message" class="error"></p>
-
-  <script src="app.js"></script>
 </body>
 </html>

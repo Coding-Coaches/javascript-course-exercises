@@ -12,7 +12,8 @@
 //     neu lädt. Neue Bücher sind verfügbar.
 //   - bei leerem Titel  Bitte einen Titel eingeben.  anzeigen
 //
-// FEHLER 1 steht in index.html (Skript im <head>).
+// FEHLER 1 und 3 stehen in index.html (type="module" fehlte,
+// name="title" fehlte).
 // ============================================================
 
 const books = [
@@ -25,8 +26,6 @@ const books = [
 const list = document.querySelector("#book-list");
 const availableCount = document.querySelector("#available-count");
 const form = document.querySelector("#book-form");
-const titleInput = document.querySelector("#title-input");
-const authorInput = document.querySelector("#author-input");
 const errorMessage = document.querySelector("#error-message");
 
 function createBookItem(book, number) {
@@ -66,13 +65,11 @@ form.addEventListener("submit", (event) => {
   // Das Formular hat die Seite neu geladen - und mit ihr das Array.
   event.preventDefault();
 
-  // FEHLER 3 behoben: stand als  titleInput.textContent.trim()
-  // Erkennungszeichen: KEINE Fehlermeldung, aber immer
-  // "Bitte einen Titel eingeben." - auch mit Titel.
-  // Breakpoint auf die Zeile, F10: title ist "".
-  // Bei Eingabefeldern steht das Getippte in value.
-  const title = titleInput.value.trim();
-  const author = authorInput.value.trim();
+  // FEHLER 3 steht in index.html: Ohne name="title" fehlt der Titel
+  // in data - data.title ist undefined, und .trim() bricht ab.
+  const data = Object.fromEntries(new FormData(form));
+  const title = data.title.trim();
+  const author = data.author.trim();
 
   if (title === "") {
     errorMessage.textContent = "Bitte einen Titel eingeben.";

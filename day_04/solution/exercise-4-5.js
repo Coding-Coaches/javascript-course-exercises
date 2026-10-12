@@ -79,7 +79,7 @@ const withNewBook = addBook(books, {
   year: 1998,
   available: true,
 });
-console.log(`Nach dem Hinzufügen: ${withNewBook.length} Bücher`);
+console.log(`Nach dem HinafterLendingzufügen: ${withNewBook.length} Bücher`);
 
 const afterLending = lendBook(books, "Momo");
 console.log(`Nach dem Ausleihen von "Momo": ${countAvailable(afterLending)} verfügbar`);

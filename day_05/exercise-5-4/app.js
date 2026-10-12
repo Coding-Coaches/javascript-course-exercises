@@ -13,7 +13,6 @@ const recipes = [
 const list = document.querySelector("#recipe-list");
 const form = document.querySelector("#recipe-form");
 const titleInput = document.querySelector("#title-input");
-const durationInput = document.querySelector("#duration-input");
 const errorMessage = document.querySelector("#error-message");
 
 // Fertig aus Übung 5.3 - hier musst du nichts ändern.
@@ -43,8 +42,9 @@ renderRecipes(list, recipes);
 // 4. Nach dem Hinzufügen das Formular leeren - und eine alte
 //    Fehlermeldung verschwindet.
 //
-// Tipp: Normalisieren → prüfen → rückmelden, wie an Tag 2.
-//       Ein Wert aus einem Eingabefeld ist IMMER ein String.
+// Tipp: preventDefault → FormData → fromEntries → prüfen → ausführen.
+//       Die Felder haben name="title" und name="duration".
+//       Ein Wert aus einem Formular ist IMMER ein String.
 
 
 

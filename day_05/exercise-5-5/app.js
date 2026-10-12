@@ -26,8 +26,6 @@ const books = [
 const list = document.querySelector("#book-list");
 const availableCount = document.querySelector("#available-count");
 const form = document.querySelector("#book-form");
-const titleInput = document.querySelector("#title-input");
-const authorInput = document.querySelector("#author-input");
 const errorMessage = document.querySelector("#error-message");
 
 function createBookItem(book, number) {
@@ -51,8 +49,9 @@ function updateCount() {
 }
 
 form.addEventListener("submit", (event) => {
-  const title = titleInput.textContent.trim();
-  const author = authorInput.value.trim();
+  const data = Object.fromEntries(new FormData(form));
+  const title = data.title.trim();
+  const author = data.author.trim();
 
   if (title === "") {
     errorMessage.textContent = "Bitte einen Titel eingeben.";
