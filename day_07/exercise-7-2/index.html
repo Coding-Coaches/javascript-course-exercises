@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Übung 7.2 - Rezepte merken, Filter teilen</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <h1>Rezepte</h1>
+
+  <div class="toolbar">
+    <label><input id="only-vegetarian" type="checkbox"> Nur vegetarisch</label>
+    <input id="search-input" type="search" placeholder="Suchen …">
+    <!-- Ausbau B -->
+    <button id="reset-button" type="button">Alles zurücksetzen</button>
+  </div>
+  <p id="recipe-count"></p>
+
+  <ul id="recipe-list"></ul>
+
+  <!-- Ausbau A: die Detailansicht -->
+  <section id="recipe-detail" class="card" hidden></section>
+
+  <form id="recipe-form">
+    <input id="title-input" placeholder="Titel">
+    <input id="duration-input" type="number" placeholder="Dauer in Minuten">
+    <label><input id="vegetarian-input" type="checkbox"> vegetarisch</label>
+    <button>Hinzufügen</button>
+  </form>
+  <p id="error-message" class="error"></p>
+</body>
+</html>

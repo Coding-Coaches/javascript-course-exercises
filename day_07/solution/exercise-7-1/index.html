@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Übung 7.1 - Rezepte von einer API</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <h1>Rezepte</h1>
+
+  <div class="toolbar">
+    <input id="search-input" type="search" placeholder="Suchen …">
+  </div>
+  <p id="recipe-count"></p>
+
+  <ul id="recipe-list"></ul>
+
+  <form id="recipe-form">
+    <input id="name-input" placeholder="Name">
+    <input id="duration-input" type="number" placeholder="Kochzeit in Minuten">
+    <button>Hinzufügen</button>
+  </form>
+  <p id="error-message" class="error"></p>
+</body>
+</html>

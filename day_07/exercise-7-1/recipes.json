@@ -1,0 +1,17 @@
+{
+  "recipes": [
+    {"id": 1, "name": "Classic Margherita Pizza", "cookTimeMinutes": 15},
+    {"id": 2, "name": "Vegetarian Stir-Fry", "cookTimeMinutes": 20},
+    {"id": 3, "name": "Chocolate Chip Cookies", "cookTimeMinutes": 10},
+    {"id": 4, "name": "Chicken Alfredo Pasta", "cookTimeMinutes": 20},
+    {"id": 5, "name": "Mango Salsa Chicken", "cookTimeMinutes": 25},
+    {"id": 6, "name": "Quinoa Salad with Avocado", "cookTimeMinutes": 15},
+    {"id": 7, "name": "Tomato Basil Bruschetta", "cookTimeMinutes": 10},
+    {"id": 8, "name": "Beef and Broccoli Stir-Fry", "cookTimeMinutes": 15},
+    {"id": 9, "name": "Caprese Salad", "cookTimeMinutes": 0},
+    {"id": 10, "name": "Shrimp Scampi Pasta", "cookTimeMinutes": 20}
+  ],
+  "total": 10,
+  "skip": 0,
+  "limit": 10
+}
